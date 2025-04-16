@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://v045ncaur4lq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbt2r"]
+bg_color = Color(0.471506, 0.646962, 0.843191, 0.980392)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.749847, 0.341499, 0.234329, 1)
+corner_radius_top_left = 9
+corner_radius_bottom_right = 9
+
+[resource]
+CheckBox/colors/font_pressed_color = Color(0.526514, 0.0320679, 0, 1)
+CheckBox/font_sizes/font_size = 18
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_tbt2r")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_tbt2r")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_tbt2r")

@@ -1,0 +1,296 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg8tgmthai6ye"]
+
+[ext_resource type="Script" uid="uid://by3eehq604sft" path="res://addons/instance_collision_and_rigidbody/dock.gd" id="1_fkd4h"]
+[ext_resource type="Theme" uid="uid://cus1txdgp1n31" path="res://addons/instance_collision_and_rigidbody/PluginTheme.tres" id="3_gofr4"]
+[ext_resource type="Texture2D" uid="uid://b35kiq0he7b8l" path="res://addons/instance_collision_and_rigidbody/Assets/Bunny.jpg" id="4_d8ps1"]
+[ext_resource type="Texture2D" uid="uid://c8h8i7uwexht3" path="res://addons/instance_collision_and_rigidbody/Assets/cat.jpg" id="4_tbt2r"]
+[ext_resource type="Theme" uid="uid://v045ncaur4lq" path="res://addons/instance_collision_and_rigidbody/Plugin2Theme.tres" id="4_xo705"]
+[ext_resource type="Texture2D" uid="uid://vit3aoxgotae" path="res://addons/instance_collision_and_rigidbody/Assets/dog.jpg" id="5_tbt2r"]
+
+[node name="Instance Collision" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fkd4h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.838544, 0.597479, 0.239957, 1)
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_gofr4")
+tab_alignment = 1
+current_tab = 0
+
+[node name="Collision" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ColorRect" type="TextureRect" parent="TabContainer/Collision"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_d8ps1")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Collision"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Collisionqq" type="VBoxContainer" parent="TabContainer/Collision/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/Collision/ScrollContainer/Collisionqq"]
+layout_mode = 2
+text = "Choose A Collision Type"
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Collision/ScrollContainer/Collisionqq"]
+layout_mode = 2
+allow_reselect = true
+auto_height = true
+item_count = 4
+item_0/text = "Trimesh"
+item_1/text = "Convex"
+item_2/text = "Simple Convex"
+item_3/text = "Multiple"
+
+[node name="createCollision" type="Button" parent="TabContainer/Collision/ScrollContainer/Collisionqq"]
+layout_mode = 2
+text = "Create Collision"
+
+[node name="Remove" type="Button" parent="TabContainer/Collision/ScrollContainer/Collisionqq"]
+layout_mode = 2
+text = "Remove Collision"
+
+[node name="CheckBox" type="CheckBox" parent="TabContainer/Collision/ScrollContainer/Collisionqq"]
+layout_mode = 2
+theme = ExtResource("4_xo705")
+text = "Reset Position"
+
+[node name="RigidBody" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ColorRect" type="TextureRect" parent="TabContainer/RigidBody"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tbt2r")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/RigidBody"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RigidBody1" type="VBoxContainer" parent="TabContainer/RigidBody/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+text = "Choose A Collision Type"
+
+[node name="ItemList" type="ItemList" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+allow_reselect = true
+auto_height = true
+item_count = 4
+item_0/text = "Trimesh (Not Recomended In RB)"
+item_1/text = "Convex"
+item_2/text = "Simple Convex"
+item_3/text = "Multiple"
+
+[node name="createRB" type="Button" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+text = "Create Rigid Body"
+
+[node name="createRB2" type="Button" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+text = "Remove Rigid Body"
+
+[node name="Label2" type="Label" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+text = "
+Advance Option:
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer"]
+layout_mode = 2
+text = "Gravity"
+
+[node name="SpinBox" type="SpinBox" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer"]
+layout_mode = 2
+max_value = 1000.0
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer2"]
+layout_mode = 2
+text = "Mass"
+
+[node name="massSB" type="SpinBox" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer2"]
+layout_mode = 2
+max_value = 1000.0
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+layout_mode = 2
+
+[node name="CCD_CB" type="CheckBox" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer3"]
+layout_mode = 2
+text = "CCD"
+
+[node name="Collision Layers" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Collision Layers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Collision Layers/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Collision Layers:"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="layerSpinBox" type="SpinBox" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+min_value = 1.0
+max_value = 24.0
+value = 2.0
+
+[node name="addLayerBTN" type="Button" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Add Layer"
+
+[node name="DelLayerBTN2" type="Button" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Delete Layer"
+
+[node name="layerContainer" type="HBoxContainer" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mask Layers"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasklayerSpinBox" type="SpinBox" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+min_value = 1.0
+max_value = 24.0
+value = 2.0
+
+[node name="addMaskLayerBTN" type="Button" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Add Layer"
+
+[node name="DelMaskLayerBTN2" type="Button" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Delete Layer"
+
+[node name="MasklayerContainer" type="HBoxContainer" parent="TabContainer/Collision Layers/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="About" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="ColorRect" type="TextureRect" parent="TabContainer/About"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tbt2r")
+expand_mode = 1
+
+[node name="About1" type="VBoxContainer" parent="TabContainer/About"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TabContainer/About/About1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "This plugin Currently only work in 3d 
+if i see lots of peple ask i will add 2d
+
+version 0.1
+bomberman30"
+autowrap_mode = 3
+
+[connection signal="item_selected" from="TabContainer/Collision/ScrollContainer/Collisionqq/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="TabContainer/Collision/ScrollContainer/Collisionqq/createCollision" to="." method="_on_create_collision_pressed"]
+[connection signal="pressed" from="TabContainer/Collision/ScrollContainer/Collisionqq/Remove" to="." method="_on_remove_pressed"]
+[connection signal="toggled" from="TabContainer/Collision/ScrollContainer/Collisionqq/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/createRB" to="." method="_on_create_rb_pressed"]
+[connection signal="pressed" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/createRB2" to="." method="_on_create_rb_2_pressed"]
+[connection signal="value_changed" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer2/massSB" to="." method="_on_mass_sb_value_changed"]
+[connection signal="toggled" from="TabContainer/RigidBody/ScrollContainer/RigidBody1/HBoxContainer3/CCD_CB" to="." method="_on_ccd_cb_toggled"]
+[connection signal="value_changed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4/layerSpinBox" to="." method="_on_layer_spin_box_value_changed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4/addLayerBTN" to="." method="_on_add_layer_btn_pressed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer4/DelLayerBTN2" to="." method="_on_del_layer_btn_2_pressed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/layerContainer/LayerButtonChild" to="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/layerContainer/LayerButtonChild" method="_on_pressed"]
+[connection signal="value_changed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5/MasklayerSpinBox" to="." method="_on_masklayer_spin_box_value_changed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5/addMaskLayerBTN" to="." method="_on_add_mask_layer_btn_pressed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/HBoxContainer5/DelMaskLayerBTN2" to="." method="_on_del_mask_layer_btn_2_pressed"]
+[connection signal="pressed" from="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/MasklayerContainer/LayerButtonChild" to="TabContainer/Collision Layers/ScrollContainer/VBoxContainer/MasklayerContainer/LayerButtonChild" method="_on_pressed"]

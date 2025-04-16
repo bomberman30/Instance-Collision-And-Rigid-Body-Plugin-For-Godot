@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cus1txdgp1n31"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsv7i"]
+bg_color = Color(0.733333, 0.384314, 0.0901961, 0.690196)
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.373183, 0, 0.0885624, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hha1m"]
+bg_color = Color(0.462745, 0.207843, 0.0941176, 0.513726)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.372549, 0, 0.0901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ggav"]
+bg_color = Color(0.510454, 0.342405, 0.19216, 0.521569)
+border_color = Color(0.466862, 0.410498, 0.278225, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shalw"]
+bg_color = Color(0.337838, 2.91191e-06, 0.225631, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdhb4"]
+bg_color = Color(0.573683, 0.404615, 9.62615e-08, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgd63"]
+bg_color = Color(0.618438, 0.245493, 0.369813, 1)
+border_width_bottom = 3
+border_color = Color(0.401199, 0.10021, 0.360536, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.48762, 0.121632, 0.435053, 0.5)
+Button/colors/font_outline_color = Color(1, 0.306071, 0.170918, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_hsv7i")
+Button/styles/focus = SubResource("StyleBoxFlat_hsv7i")
+Button/styles/normal = SubResource("StyleBoxFlat_hsv7i")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
+ItemList/constants/outline_size = 7
+ItemList/styles/panel = SubResource("StyleBoxFlat_hha1m")
+Label/colors/font_color = Color(0.784241, 0.474799, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
+TabContainer/styles/panel = SubResource("StyleBoxFlat_6ggav")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_shalw")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_mdhb4")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_fgd63")

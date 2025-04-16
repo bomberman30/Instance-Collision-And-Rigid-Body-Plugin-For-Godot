@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwe5miy1fhlql"]
+
+[node name="LayerButtonChild" type="Button"]
+text = "1212"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

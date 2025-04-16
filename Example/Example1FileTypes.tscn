@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://d51o7i0npfti"]
+
+[ext_resource type="PackedScene" uid="uid://7hkpqks6ryx" path="res://3D_Models/BlenderFile.blend" id="1_pu6yh"]
+[ext_resource type="PackedScene" uid="uid://b7r6f4v27l6bi" path="res://3D_Models/FBX_File.fbx" id="2_ttgeo"]
+[ext_resource type="PackedScene" uid="uid://byqlwq1pp7b6n" path="res://3D_Models/GLB_File.glb" id="3_tuohj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pu6yh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ttgeo"]
+sky_material = SubResource("ProceduralSkyMaterial_pu6yh")
+
+[sub_resource type="Environment" id="Environment_tuohj"]
+background_mode = 2
+sky = SubResource("Sky_ttgeo")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yrmdq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6p2k"]
+albedo_color = Color(0.192173, 0.150295, 0.29341, 1)
+metallic = 1.0
+metallic_specular = 0.05
+roughness = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tuohj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FBX_File" parent="." instance=ExtResource("2_ttgeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49695, 0, 0.484777)
+
+[node name="ship-ghost2" parent="." instance=ExtResource("3_tuohj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.219, 0, -0.313876)
+
+[node name="FloorMadeInGodot" type="MeshInstance3D" parent="."]
+transform = Transform3D(22, 0, 0, 0, 22, 0, 0, 0, 22, 0, -4.13106, 0)
+mesh = SubResource("PlaneMesh_yrmdq")
+surface_material_override/0 = SubResource("StandardMaterial3D_v6p2k")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943893, 0.330251, 0, -0.330251, 0.943893, 0, 5.19976, 22.3128)
+
+[node name="BlenderFile" parent="." instance=ExtResource("1_pu6yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.529865, 0)
+
+[editable path="BlenderFile"]
