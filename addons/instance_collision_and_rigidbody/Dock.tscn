@@ -137,6 +137,7 @@ layout_mode = 2
 text = "Create Rigid Body"
 
 [node name="createRB2" type="Button" parent="TabContainer/RigidBody/ScrollContainer/RigidBody1"]
+visible = false
 layout_mode = 2
 text = "Remove Rigid Body"
 

@@ -21,7 +21,10 @@ whit this plugin it's only take 1 click!!!
 
 the plugin work on all meshes in godot and  GLB or FBX or BLEND files
 
-
+TO DO:
+	add functions to 2d as well
+	add remove rigid body function
+	
 this addon Currently in Alpha Stage So If You see any errors or mailfunctions please open issue
 
 please give a star if you like
