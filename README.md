@@ -21,6 +21,13 @@ https://www.youtube.com/watch?v=e9AscC-37U0
 
 the plugin work on all meshes in godot and  GLB or FBX or BLEND files
 
+
+IMPORTANT:
+	you must choose the main node of the mesh and not the child itself!!
+	
+	
+	
+	
 TO DO:
 	add functions to 2d as well
 	add remove rigid body function
