@@ -9,7 +9,6 @@ when you try add collision or rigid body in godot(whitout this addon) it is kind
 2. drag your mesh to this rigid body
 3. create collision for the mesh (if the mesh is FBX or GLB or BLEND you need to enable editable children)
 4. drag the collision to the rigid body
-![](./Images/menualCollision.gif)
 
 what if you want to add 100 rigid body for all kinds of meshes? you need to reapeat this 100 times!
 it will take a lot of time!
