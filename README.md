@@ -16,7 +16,8 @@ it will take a lot of time!
 
 whit this plugin it's only take 1 click!!!
 
-
+here a video
+https://www.youtube.com/watch?v=e9AscC-37U0
 
 the plugin work on all meshes in godot and  GLB or FBX or BLEND files
 
